@@ -23,5 +23,18 @@
         "amount": 220
       }
     ]
+  },
+  {
+    "customer": "Vss",
+    "transaction": [
+      {
+        "date": "2024-01-15",
+        "amount": 70
+      },
+      {
+        "date": "2024-02-25",
+        "amount": 340
+      }
+    ]
   }
 ]
