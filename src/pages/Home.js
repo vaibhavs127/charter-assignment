@@ -5,51 +5,13 @@ import "../assets/css/style.css"
 
 const Home = (props) => {
   const [data, setData] = useState([
-    {
-      "customer": "Vaibhav",
-      "transaction": [
-        {
-          "date": "2024-01-15",
-          "amount": 120
-        },
-        {
-          "date": "2024-01-25",
-          "amount": 75
-        },
-        {
-          "date": "2024-02-10",
-          "amount": 150
-        },
-        {
-          "date": "2024-02-20",
-          "amount": 45
-        },
-        {
-          "date": "2024-03-5",
-          "amount": 220
-        }
-      ]
-    },
-    {
-      "customer": "VSS",
-      "transaction": [
-        {
-          "date": "2024-01-15",
-          "amount": 120
-        },
-        {
-          "date": "2024-01-25",
-          "amount": 75
-        },
 
-      ]
-    }
   ])
 
   useEffect(() => {
-    // fetch("../db/customers.json")
-    //   .then((res) => res.json())
-    //   .then((ele) => setData(ele))
+    axios.get("/Customer.json")
+      .then((ele) => setData(ele.data))
+      .catch((err) => console.log(err))
 
   }, [])
 
