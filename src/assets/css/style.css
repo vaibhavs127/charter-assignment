@@ -25,13 +25,18 @@ h3 {
   color: #2980b9;
 }
 
-.rewardTable{
-list-style-type: none;
+.rewardTable {
+  list-style-type: none;
 
-padding: 0;
+  padding: 0;
 }
 
-.rewardTable{
-padding: 5px 0;
-color: #34495e;
+.rewardTable {
+  padding: 5px 0;
+  color: #34495e;
+}
+
+.centerTable {
+  margin-left: auto;
+  margin-right: auto;
 }
