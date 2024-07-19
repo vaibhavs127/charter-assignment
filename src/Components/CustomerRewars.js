@@ -5,31 +5,21 @@ import { calculatePoints } from '../helper/helper';
 const CustomerRewars = (props) => {
 
   const [rewards, setRewards] = useState({
-
     monthly: {}, total: 0
   })
 
   const calculateRewards = () => {
     try {
       const monthlyRewards = {};
-      props.customerData.transaction.forEach((tt) => {
-        const date = tt.date ? new Date(tt.date) : null
-        const month = date?.getMonth();
-        const year = date?.getFullYear();
-        const key = `${year}-${month + 1}`
-
-        console.log(key, date, month, year, monthlyRewards);
-
+      props.customerData.dollerSpent.forEach((tt) => {
+        const key = `${tt.year}-${tt.month}`
+        console.log(key, monthlyRewards);
         if (!monthlyRewards[key]) {
           monthlyRewards[key] = 0
         }
-
         monthlyRewards[key] += calculatePoints(tt.amount)
       })
-
       const totalRewards = Object.values(monthlyRewards).reduce((acc, points) => acc + points, 0)
-
-
       setRewards({
         monthly: monthlyRewards,
         total: totalRewards
